@@ -10,17 +10,15 @@
   <script type="text/javascript">
     var P       = Plasmap();
     var counter = 0;
-    var names   = [];
     var channel = P.channelWithDefaultMap(
         function(obj){
-          names = names + (obj.properties.name + ', ');
-          console.log(names);
+          counter = counter + 1;
+          console.log("I have seen " + counter + " restaurants so far.");
         }
     );
-    var query1  = city("Bonn");
-    var query2  = districts(query1);
+    var query   = restaurants(districts(city("Bonn")));
 
-    channel.send(query2);
+    channel.send(query);
   </script>
 </body>
 </html>
