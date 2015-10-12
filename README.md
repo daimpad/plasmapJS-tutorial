@@ -1,5 +1,5 @@
 # plasmapJS-tutorial
-![a video demonstrating the use of plasmap.js](https://github.com/plasmap/plasmapJS-tutorial/demo.gif)
+![a video demonstrating the use of plasmap.js](https://raw.githubusercontent.com/plasmap/plasmapJS-tutorial/master/demo.gif)
 
 plasmapJS allows to retrieve geographical data and points of interest from plasmap.io. This is a tutorial illustrating how to get started using this technology.
 
