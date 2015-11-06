@@ -7,6 +7,8 @@ In order to get going, **clone this repository** and have a look at the `.html` 
 
 There are currently three tutorials: Hello World, Composing Queries and Custom Callbacks.
 
+At the bottom of this document is a list of the currently supported queries.
+
 ## Hello World
 
 This tutorial shows how to display the polygon representing the city
@@ -63,3 +65,62 @@ It has the following shape:
 function(geoJson) { ... }
 ```
 The tutorial file is `tutorial3-custom-callbacks.html`.
+
+
+# Supported queries
+Currently they all are defined for areas. 
+Use them with `city("Bonn")`. Eg.
+`restaurants(city("Bonn"))`.
+
+```
+districts           
+restaurants         
+theatres            
+supermarkets        
+museums             
+kindergartens       
+publicTransportStops
+colleges            
+libraries           
+schools             
+universities        
+petrolStations      
+parkings            
+taxis               
+atms                
+banks               
+bureauxDeChange     
+clinics             
+dentists            
+doctors             
+hospitals           
+pharmacies          
+veterinaries        
+brothels            
+casinos             
+cinemas             
+nightClubs          
+stripClubs          
+studio              
+coworkingSpaces     
+fireStations        
+gyms                
+placesOfWorship     
+policeStations      
+postBoxes           
+postOffices         
+prisons             
+recyclingContainers 
+saunas              
+telephones          
+toilets             
+golfCourses         
+iceRinks            
+parks               
+sportPitches        
+playgrounds         
+stadiums            
+swimmingPools       
+swimmingAreas       
+sportTracks         
+```
