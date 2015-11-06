@@ -3,6 +3,7 @@
   <script src="plasmap.js"></script>
   <!-- These two following imports are necessary when using plasmapJS's default map, which we are.-->
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+  <link rel="stylesheet" href="animate.css" />
   <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
 </head>
 <body>
@@ -10,20 +11,24 @@
   <div id="plasmap" style="height: 100%; width: 100%;"></div>
 
   <!-- All the necessary code is contained in this script tag-->
-  <script type="text/javascript">
+  <script src="js/test.js"></script>
+    var map = L.map("plasmap", {
+        zoomControl : false,
+        scrollWheelZoom: true
+    }).setView([51.505, -0.09], 13);
+
+    var tileLayer = L.tileLayer("http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", { attribution: "NEIN!", detectRetina: true });
+
+    tileLayer.addTo(map);
+
     //Initialise plasmap
     var P       = Plasmap();
-
-   //We can send queries over this channel,
-   //They will be displayed on the map we d
-    var channel = P.channelWithDefaultMap();
-
-   //This is our query
-   //We retrieve the shape of the city with name 'Bonn'
-    var query   = city("Bonn");
-
-    //Finally we send the query over our channel.
-    channel.send(query);
+    var query   = districts(city("Mettmann"));
+    var run = P.runOnMap(map);
+    run(query, function(obj) {
+      var layer = L.geoJson(obj, null);
+      map.addLayer(layer);
+    });
 
   </script>
 </body>
